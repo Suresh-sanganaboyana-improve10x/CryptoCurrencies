@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@{tags.name}"
+            tools:text="Name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
