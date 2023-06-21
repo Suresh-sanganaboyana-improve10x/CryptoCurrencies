@@ -24,7 +24,6 @@ public class CryptoDetailsActivity extends AppCompatActivity {
 
     private ActivityCryptoDetailsBinding binding;
     private TagAdapter tagAdapter;
-    private CryptoCoinsAdapter cryptoCoinsAdapter;
     private String id;
     private List<Tags> tagsList = new ArrayList<>();
 //    private List<Team> teams;
