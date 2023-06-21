@@ -53,6 +53,8 @@
             android:textColor="#096E03"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/symbol_txt"
             app:layout_constraintTop_toTopOf="@+id/symbol_txt"
             tools:text="Active" />
     </androidx.constraintlayout.widget.ConstraintLayout>
