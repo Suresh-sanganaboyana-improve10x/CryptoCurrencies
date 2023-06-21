@@ -1,6 +1,7 @@
 package com.example.cryptocurrencies.network;
 
 import com.example.cryptocurrencies.pojoclass.Coin;
+import com.example.cryptocurrencies.pojoclass.CryptoDetail;
 
 import java.util.List;
 
@@ -11,4 +12,7 @@ public interface CryptoCoinsService {
 
     @GET("coins")
     Call<List<Coin>> getCryptoCoins();
+
+    @GET("coins/btc-bitcoin")
+    Call<CryptoDetail> getCryptoCoinsDetails();
 }

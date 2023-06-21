@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 import com.example.cryptocurrencies.network.CryptoCoinsApi;
 import com.example.cryptocurrencies.network.CryptoCoinsService;
 import com.example.cryptocurrencies.pojoclass.Coin;
+import com.example.cryptocurrencies.pojoclass.CryptoDetail;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -33,5 +34,14 @@ public class ExampleUnitTest {
         assertNotNull(coins);
         assertFalse(coins.isEmpty());
         System.out.println(new Gson().toJson(coins));
+    }
+
+    @Test
+    public void getCryptoDetails() throws IOException {
+        CryptoCoinsService cryptoCoinsService = new CryptoCoinsApi().createCryptoCoinsService();
+        Call<CryptoDetail> call = cryptoCoinsService.getCryptoCoinsDetails();
+        CryptoDetail cryptoDetail = call.execute().body();
+        assertNotNull(cryptoDetail);
+        System.out.println(new Gson().toJson(cryptoDetail));
     }
 }
