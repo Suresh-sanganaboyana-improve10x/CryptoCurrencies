@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="coin"
             type="com.example.cryptocurrencies.pojoclass.Coin" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/rank_txt"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{coin.rank + '.'}"
-        tools:text="rank"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="4dp">
 
-    <TextView
-        android:id="@+id/name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{coin.name}"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/rank_txt"
-        app:layout_constraintTop_toTopOf="@+id/rank_txt" />
+        <TextView
+            android:id="@+id/rank_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(coin.rank) + '.'}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="rank" />
 
-    <TextView
-        android:id="@+id/symbol_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{'(' + coin.symbol + ')'}"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/name_txt"
-        app:layout_constraintTop_toTopOf="@+id/name_txt" />
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@{coin.name}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/rank_txt"
+            app:layout_constraintTop_toTopOf="@+id/rank_txt"
+            tools:text="name" />
 
-    <TextView
-        android:id="@+id/active_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{coin.active ? `active` : `deActive`}"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/symbol_txt" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/symbol_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@{'(' + coin.symbol + ')'}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/name_txt"
+            app:layout_constraintTop_toTopOf="@+id/name_txt"
+            tools:text="(Symbol)" />
+
+        <TextView
+            android:id="@+id/active_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{coin.active ? `active` : `deActive`}"
+            android:textColor="#096E03"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/symbol_txt"
+            tools:text="Active" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
