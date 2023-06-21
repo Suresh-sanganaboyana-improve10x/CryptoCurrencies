@@ -7,12 +7,13 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface CryptoCoinsService {
 
     @GET("coins")
     Call<List<Coin>> getCryptoCoins();
 
-    @GET("coins/btc-bitcoin")
-    Call<CryptoDetail> getCryptoCoinsDetails();
+    @GET("coins/{id}")
+    Call<CryptoDetail> getCryptoCoinsDetails(@Path("id") String id);
 }

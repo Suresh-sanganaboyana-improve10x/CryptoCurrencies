@@ -39,7 +39,7 @@ public class ExampleUnitTest {
     @Test
     public void getCryptoDetails() throws IOException {
         CryptoCoinsService cryptoCoinsService = new CryptoCoinsApi().createCryptoCoinsService();
-        Call<CryptoDetail> call = cryptoCoinsService.getCryptoCoinsDetails();
+        Call<CryptoDetail> call = cryptoCoinsService.getCryptoCoinsDetails("btc-bitcoin");
         CryptoDetail cryptoDetail = call.execute().body();
         assertNotNull(cryptoDetail);
         System.out.println(new Gson().toJson(cryptoDetail));
