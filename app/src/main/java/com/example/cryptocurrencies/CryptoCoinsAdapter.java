@@ -17,7 +17,7 @@ public class CryptoCoinsAdapter extends RecyclerView.Adapter<CryptoCoinsViewHold
     private List<Coin> coins;
     private OnItemActionListener onItemActionListener;
 
-    void setCoins(List<Coin> coins) {
+    public void setCoins(List<Coin> coins) {
         this.coins = coins;
         notifyDataSetChanged();
     }

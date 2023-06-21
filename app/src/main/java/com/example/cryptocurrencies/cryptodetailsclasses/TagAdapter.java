@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cryptocurrencies.databinding.TagItemBinding;
+import com.example.cryptocurrencies.pojoclass.CryptoDetail;
 import com.example.cryptocurrencies.pojoclass.Tags;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class TagAdapter extends RecyclerView.Adapter<TagViewHolder> {
 
     void setTags(List<Tags> tags) {
         this.tags = tags;
+        notifyDataSetChanged();
     }
 
 
