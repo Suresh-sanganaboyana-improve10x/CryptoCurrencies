@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CryptoCoinsActivity extends AppCompatActivity {
+public class CryptoCoinsActivity extends BaseActivity {
 
     private ActivityCryptoCoinsBinding binding;
     private ArrayList<Coin> coins = new ArrayList<>();
@@ -46,13 +46,13 @@ public class CryptoCoinsActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<Coin> coinList = response.body();
                     adapter.setCoins(coinList);
-                    Toast.makeText(CryptoCoinsActivity.this, "Fetch Coins SuccessFul", Toast.LENGTH_SHORT).show();
+                    showToast("Fetch Coins SuccessFul");
                 }
             }
 
             @Override
             public void onFailure(Call<List<Coin>> call, Throwable t) {
-                Toast.makeText(CryptoCoinsActivity.this, "Failed fetch coins", Toast.LENGTH_SHORT).show();
+                showToast("Failed fetch coins");
             }
         });
     }
